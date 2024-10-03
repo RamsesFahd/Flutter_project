@@ -1,0 +1,167 @@
+// ignore_for_file: deprecated_member_use, prefer_const_constructors
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const Cafe());
+}
+
+class Cafe extends StatelessWidget {
+  const Cafe({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(useMaterial3: true),
+      home: const StudyRoom(),
+    );
+  }
+}
+
+//predefined
+class StudyRoom extends StatelessWidget {
+  const StudyRoom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 3,
+        backgroundColor:
+            const Color.fromARGB(255, 29, 25, 21), // Dark background color
+        title: const Text(
+          "Study Room",
+          style: TextStyle(
+            color: Color.fromARGB(255, 193, 170, 144), // Light color for text
+          ),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.coffee),
+          color: const Color.fromARGB(255, 193, 170, 144), // Light icon color
+          iconSize: 25,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+            color: const Color.fromARGB(255, 193, 170, 144), // Light icon color
+            iconSize: 24.9,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.chat),
+            color: const Color.fromARGB(255, 193, 170, 144), // Light icon color
+            iconSize: 24.9,
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              color: const Color.fromARGB(
+                  255, 193, 170, 144), // Light container background
+              child: const Text(
+                "Welcome to the Study Cafe! Find your space and focus on your studies in a peaceful environment.",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(
+                      255, 29, 25, 21), // Dark text color for contrast
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 150,
+              width: 1500,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(
+                    255, 105, 84, 65), //containor background
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 193, 170, 144),
+                    width: 3.0),
+              ),
+              child: const Center(
+                child: Text(
+                  "Room 1: Quiet Study",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color.fromARGB(255, 193, 170, 144),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 150,
+              width: 1500,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(
+                    255, 105, 84, 65), //containor background
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 193, 170, 144),
+                    width: 3.0),
+              ),
+              child: const Center(
+                child: Text(
+                  "Room 2: Group Study",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color.fromARGB(255, 193, 170, 144),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 150,
+              width: 1500,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(
+                    255, 105, 84, 65), //containor background
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 193, 170, 144),
+                    width: 3.0),
+              ),
+              child: const Center(
+                child: Text(
+                  "Room 3: Open Discussion",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color.fromARGB(255, 193, 170, 144),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    const Color.fromARGB(255, 105, 84, 65)),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8))),
+              ),
+              child: Text(
+                "For reservation click here",
+                style: TextStyle(fontSize: 30),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
